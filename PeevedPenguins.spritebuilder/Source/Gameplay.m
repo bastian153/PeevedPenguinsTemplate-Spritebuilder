@@ -12,6 +12,8 @@
     CCPhysicsNode *_physicsNode;
     CCNode *_catapultArm;
     CCNode *_levelNode;
+    CCNode *_beastConnection;
+
 }
 
 // is called when CCB file has completed loading
@@ -44,7 +46,7 @@
     
     // ensure followed object is in visible are when starting
     self.position = ccp(0, 0);
-    CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
+    CCActionFollow *follow = [CCActionFollow actionWithTarget:_beastConnection worldBoundary:self.boundingBox];
     [self runAction:follow];
 }
 
